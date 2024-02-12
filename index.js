@@ -9,7 +9,7 @@ const TOKEN = process.env.TOKEN
 const main = async () => {
   const provider = createProvider(BaileysProvider)
 
-  provider.initHttpServer(3000)
+  provider.initHttpServer(process.env.PORT || 3000)
 
   provider.http.server.post('/send-message', handleCtx(async (bot, req, res) => {
     if (req.headers.authorization !== `Bearer ${TOKEN}`) {

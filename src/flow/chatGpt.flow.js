@@ -1,8 +1,8 @@
-import BotWhatsapp from '@bot-whatsapp/bot';
-import { run, runDetermine } from 'src/services/openai';
-import chatbotFlow from './chatbot.flow';
+import BotWhatsapp from '@bot-whatsapp/bot'
+import { run, runDetermine } from '../services/openai/index.js'
+// import chatbotFlow from './chatbot.flow'
 
-export default BotWhatsapp.addKeyword()
+export default BotWhatsapp.addKeyword('')
   .addAction(async (ctx, { state, gotoFlow }) => {
     try {
       const history = (state.getMyState()?.history ?? [])
@@ -12,7 +12,7 @@ export default BotWhatsapp.addKeyword()
       }
 
       if (ai.toLowerCase().includes('chatbot')) {
-        return gotoFlow(chatbotFlow)
+        // return gotoFlow(chatbotFlow)
       }
 
     } catch (err) {

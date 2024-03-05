@@ -1,7 +1,8 @@
 import BotWhatsapp from '@bot-whatsapp/bot'
-import chatGptFlow from './chatGpt.flow'
+import chatGptFlow from './chatGpt.flow.js'
+import { createFlow } from '@bot-whatsapp/bot'
 
-export default BotWhatsapp.createFlow(
+export default createFlow(
   [
     chatGptFlow,
   ]
